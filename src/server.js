@@ -12,6 +12,10 @@ app.get("/", (req, res) => {
   res.render("index")
 })
 
+app.get("/editar", (req, res) => {
+  res.render("edits")
+})
+
 app.post("/saved", (req, res) => {
   db.run(`CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,11 +33,27 @@ app.post("/saved", (req, res) => {
     if (error) {
       console.log(error)
     }
-    console.log("Usuaŕio cadastrado")
+    console.log("Usuário cadastrado")
     res.render("savedUser", { saved: true })
   }
 
   db.run(query, values, insertUsersTable)
+})
+
+app.post("/edit", (req, res) => {
+  const { id, name, email, password } = req.body
+
+  db.run(
+    `UPDATE users SET name =?, email =?, password =? WHERE id =?`,
+    [name, email, password, id],
+    function (error) {
+      if (error) {
+        return console.error(error.message)
+      }
+      res.render("okEdit")
+      console.log(`Dados atualizados para: ${name}, ${email}, ${password}`)
+    }
+  )
 })
 
 app.listen(3000)

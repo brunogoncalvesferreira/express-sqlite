@@ -95,3 +95,18 @@ body {
     display: block;
   }
 }
+
+.layout {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #030712;
+}
+
+.text-global {
+  font-size: 64px;
+  text-align: center;
+  line-height: 120%;
+  letter-spacing: -8px;
+  color: #fff;
+}
