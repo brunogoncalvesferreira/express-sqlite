@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #030712;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+#app {
+  width: 450px;
+}
+
+#app fieldset {
+  padding: 1rem;
+  border: 2px solid #111827;
+  border-radius: 4px;
+}
+
+#app fieldset legend {
+  color: #e5e7eb;
+  font-weight: 700;
+}
+
+#app fieldset form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#app fieldset form div {
+  display: flex;
+  align-items: center;
+}
+
+#app fieldset form div label {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+#app fieldset form div input {
+  width: 89%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #111827;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  outline: none;
+}
+
+#app fieldset form div input::placeholder {
+  color: #e5e7eb;
+  opacity: 0.5;
+}
+
+#app fieldset form button {
+  border: none;
+  border-radius: 4px;
+  background-color: #22c55e;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#app fieldset form button:hover {
+  background-color: #16a34a;
+}
+
+@media (max-width: 470px) {
+  html {
+    font-size: 85.5%;
+  }
+
+  #app {
+    width: 100%;
+  }
+
+  #app fieldset form div {
+    gap: 1rem;
+  }
+
+  #app fieldset form div label {
+    display: block;
+  }
+}
