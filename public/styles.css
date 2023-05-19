@@ -16,6 +16,14 @@ body {
   width: 450px;
 }
 
+#app #btn-link {
+  text-decoration: none;
+  color: #fff;
+  margin: 1.5rem 0;
+  display: block;
+  text-transform: uppercase;
+}
+
 #app fieldset {
   padding: 1rem;
   border: 2px solid #111827;
@@ -35,7 +43,7 @@ body {
 
 #app fieldset form div {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 #app fieldset form div label {
@@ -46,7 +54,7 @@ body {
 }
 
 #app fieldset form div input {
-  width: 89%;
+  width: 100%;
   padding: 0.5rem;
   border-radius: 4px;
   border: none;

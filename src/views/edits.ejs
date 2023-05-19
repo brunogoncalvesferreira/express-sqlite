@@ -5,30 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editar</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form action="/edit" method="post">
-      <div>
-        <label for="id">ID:</label>
-        <input type="number" id="id" name="id" required />
-      </div>
+    <div id="app">
+      <a id="btn-link" href="/">Voltar</a>
+      <fieldset>
+        <legend>Editar Usuário</legend>
 
-      <div>
-        <label for="name">Novo nome</label>
-        <input type="text" id="name" name="name" required />
-      </div>
+        <form action="/edit" method="post">
+          <div>
+            <label for="id">ID:</label>
+            <input type="number" id="id" name="id" required />
+          </div>
 
-      <div>
-        <label for="email">Novo e-mail</label>
-        <input type="email" id="email" name="email" required />
-      </div>
+          <div>
+            <label for="name">Novo nome</label>
+            <input type="text" id="name" name="name" required />
+          </div>
 
-      <div>
-        <label for="password">Nova senha</label>
-        <input type="password" id="password" name="password" required />
-      </div>
+          <div>
+            <label for="email">Novo e-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-      <button type="submit">Editar</button>
-    </form>
+          <div>
+            <label for="password">Nova senha</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <button type="submit">Editar</button>
+        </form>
+      </fieldset>
+    </div>
   </body>
 </html>
