@@ -2,6 +2,7 @@ import express from "express"
 import { db } from "./database/db.js"
 
 const app = express()
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static("public"))
 
@@ -54,6 +55,16 @@ app.post("/edit", (req, res) => {
       console.log(`Dados atualizados para: ${name}, ${email}, ${password}`)
     }
   )
+})
+
+app.get('/saved', (req, res) => {
+  db.all(`SELECT id, name, email, password FROM users`, (error, rows) => {
+    if(error) {
+      console.log(error)
+    } else {
+      res.json(rows)
+    }
+  })
 })
 
 app.listen(3000)
